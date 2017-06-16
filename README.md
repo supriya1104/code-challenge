@@ -1,5 +1,38 @@
 #Shutterfly Customer Lifetime Value
 
+Programming Language: Java 8
+Referenced Libraries: json-simple-1.1.jar
+Input file: input.txt – Few more events are added and calculated the LTV.
+Output file: output.txt – As output format is not specified, wrote code in order to print the keys and the their values with comma seprated.
+Assumptions:input data has one week data.
+Code Flow:
+•	CodeProject is the main class which has all the implementation.
+•	This class reads the text file from input folder which is in JSON format.
+•	And then it converts into JSON array and then it read the events as array and convert it into JSON objects.
+•	CUSTOMER, SITE_VISIT, IMAGE and ORDER type events are read from Json array, and based on the verb, the corresponding methods are called which stores/updates the values in the maps respectively which has key and values. 
+•	After the cust_map, site_map, image_map and order_map has populated it then calculate the top 10 LTV of customers.
+•	First it iterates through all customers one by and one and their orders which they have and get the total amount and total orders.
+•	And then calculates the LTV which is 52(a) *t. ‘a’ value is nothing but the total amount/total orders which it got from previous step. And then it is multiplied into total visits which it gets from site_map.'t' is 10 years which is average customer lifespan.
+•	TreeMap is used to get the sorted values.
+•	Then the topx values are written to the file.
+
+Testing:
+Invalid types,verbs and null values checks are tested.
+
+Complexity:
+code is written with less complexity by using different Maps.TreeMap is used to get the sorted key values pairs in order to void extra coding of comparing the values.
+
+Recommendations:
+When dealing with large datasets, Big data technologies can be used like NoSql databases, Spark and Hadoop. 
+NoSql databases can effectively deal with the semi-structed data.
+Spark does computations in-memory and gives faster response time.
+HDFS can store any large amount to data which can be used for customer analytics.
+inorder to utlise in-memory computations and to get faster response time.
+Due to fault-tolerance, data cannot be lost.
+scripts can be written to automate the process.
+
+
+
 One way to analyze acquisition strategy and estimate marketing cost is to calculate the Lifetime Value (“LTV”) of a customer. Simply speaking, LTV is the projected revenue that customer will generate during their lifetime.
 
 A simple LTV can be calculated using the following equation: `52(a) x t`. Where `a` is the average customer value per week (customer expenditures per visit (USD) x number of site visits per week) and `t` is the average customer lifespan. The average lifespan for Shutterfly is 10 years.  
