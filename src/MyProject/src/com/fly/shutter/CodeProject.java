@@ -35,7 +35,7 @@ public class CodeProject {
 		JSONArray data = null;
 		try {
 			// JSONParser used to parse the data and store as JSONArray
-			data = (JSONArray) parser.parse(new FileReader("input\\events.txt"));
+			data = (JSONArray) parser.parse(new FileReader("input\\input.txt"));
 			for (Object obj : data)
 
 			{
@@ -220,7 +220,7 @@ public class CodeProject {
 			}
 		try {
 
-			FileWriter fw = new FileWriter("output\\events1.txt");
+			FileWriter fw = new FileWriter("output\\output.txt");
 			fw.write("key" + "----" + "Value");
 			fw.write(System.lineSeparator());
 			
